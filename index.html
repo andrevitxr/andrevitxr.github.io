@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #8f00b3, #2a002c);
+            color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: 100vh;
+            flex-direction: column;
+            padding: 50px;
+            margin-top: 30px;
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+            font-weight: bold;
+            color: #ffffff;
+            letter-spacing: 2px;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+            color: #ffffff;
+            font-weight: 300;
+        }
+
+        p {
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+            color: #ffffff;
+        }
+
+        input {
+            width: 80%;
+            max-width: 400px;
+            padding: 12px;
+            margin-bottom: 20px;
+            font-size: 1rem;
+            border: none;
+            border-radius: 25px;
+            text-align: center;
+            background-color: #ecf0f1;
+            color: #2c3e50;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        input:focus {
+            outline: none;
+            transform: scale(1.05);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .flex-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: stretch;
+            width: 100%;
+        }
+
+        .container {
+            flex: 1;
+            margin-right: 50px;
+        }
+
+        .resultado {
+            flex: 1;
+            min-width: 200px;
+            padding-left: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            margin-left: 700px;
+            transform: translateY(-405px);
+            border-right: #ecf0f1;
+        }
+
+        .aviso {
+            font-size: 0.9em;
+            color: #888;
+            font-style: italic;
+            text-shadow: none;
+        }
+
+        button {
+            background-color: #ff5722;
+            color: white;
+            padding: 12px 20px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            background-color: #c0392b;
+            transform: scale(1.05);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        #total {
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            color: #ffffff;
+            font-weight: 100;
+            letter-spacing: 1px;
+        }
+
+        @media (max-width: 768px) {
+            .flex-container {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            h2 {
+                font-size: 1.2rem;
+            }
+
+            input, button {
+                width: 90%;
+            }
+
+            .container, .resultado {
+                margin-right: 0;
+                padding-left: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Sonoladora</h1>
+        <h2>Descubra o quanto de dinheiro você perde enquanto dorme!</h2>
+        <p>Insira seu salario mensal</p>
+        <input type="number" id="salario" min="0">
+        <p>Insira quantas horas você trabalha por dia</p>
+        <input type="number" id="trabalho" min="0" max="24"> <br>
+        <p>Insira quantas horas você dorme por dia</p>
+        <input type="number" id="sono" min="0" max="24"> <br>
+        <button onclick="calcularPerda()">Clique aqui</button> <br>
+    </div>
+    <div class="resultado">
+        <h2 id="total"></h2>
+    </div>
+    <div class="recado">
+        <p id="lembrando"></p>
+    <script src="script.js"></script>
+</body>
+</html>
